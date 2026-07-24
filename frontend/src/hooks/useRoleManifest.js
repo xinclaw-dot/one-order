@@ -6,26 +6,26 @@ import { useEffect } from "react";
 // terpisah di folder public/ (lihat frontend/public/manifest-*.webmanifest).
 const ROLE_MANIFESTS = {
   // Customer sengaja TIDAK diubah — title & apple-mobile-web-app-title tetap
-  // seperti default di index.html ("Orderin Aja — Pesan Makanan" /
-  // "Orderin Aja"), tidak berubah dari kondisi sekarang.
+  // seperti default di index.html ("Order One — Pesan Makanan" /
+  // "Order One"), tidak berubah dari kondisi sekarang.
   customer: {
     href: "/manifest.webmanifest",
-    title: "Orderin Aja — Pesan Makanan",
-    appleTitle: "Orderin Aja",
+    title: "Order One — Pesan Makanan",
+    appleTitle: "Order One",
   },
   kitchen: {
     href: "/manifest-kitchen.webmanifest",
-    title: "Orderin Aja — Kitchen",
+    title: "Order One — Kitchen",
     appleTitle: "Kitchen",
   },
   kasir: {
     href: "/manifest-kasir.webmanifest",
-    title: "Orderin Aja — Kasir",
+    title: "Order One — Kasir",
     appleTitle: "Kasir",
   },
   admin: {
     href: "/manifest-admin.webmanifest",
-    title: "Orderin Aja — Admin",
+    title: "Order One — Admin",
     appleTitle: "Admin",
   },
 };

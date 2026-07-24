@@ -3,7 +3,7 @@ import autoTable from "jspdf-autotable";
 import ExcelJS from "exceljs";
 import { rupiah, formatDateLabel, formatDateTimeLabelWIB } from "./format";
 
-const BUSINESS_NAME = "Orderin Aja";
+const BUSINESS_NAME = "Order One";
 const LOGO_URL = "/logo.png";
 const LOGO_RATIO = 713 / 827; // rasio asli lebar/tinggi logo.png (logo baru OrderinAja, maskot + tulisan)
 

@@ -132,7 +132,7 @@ function buildReceiptMarkup({ order, items, cashierName, storeName, paperWidth }
     <div class="receipt-ticket" style="width:${profile.mm}mm;font-size:${profile.fontSize}px;padding:${profile.padding};">
       <div class="rt-center">
         <img src="/logo.png" alt="" class="rt-logo" />
-        <h1 style="font-size:${profile.titleSize}px;">${escapeHtml(storeName || "Orderin Aja")}</h1>
+        <h1 style="font-size:${profile.titleSize}px;">${escapeHtml(storeName || "Order One")}</h1>
         <div class="rt-meta" style="font-size:${profile.subFontSize}px;">Struk Pesanan</div>
       </div>
       <div class="rt-divider"></div>

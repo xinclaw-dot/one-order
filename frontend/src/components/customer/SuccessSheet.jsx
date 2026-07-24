@@ -29,7 +29,7 @@ export default function SuccessSheet({ order, onReset, qrisImageUrl }) {
       await downloadQrisWithAmount({
         qrisImageUrl,
         total: order.total,
-        storeName: order.tenant_name || "Warung Kita",
+        storeName: order.tenant_name || "Order One",
         orderCode,
         orderDateLabel,
         fileName: `qris-${orderCode}`,

@@ -30,10 +30,10 @@ export default function LoginScreen({ onLogin, loading, error, needsName, onBack
       <div className="relative z-10 w-full max-w-sm rounded-3xl bg-white p-6 ring-1 ring-ink/10 shadow-sm">
         <div className="mb-6 flex items-center gap-3">
           <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-chili to-guava p-1.5 text-white shadow-md shadow-chili/20">
-            <img src="/logo.png" alt="Orderin Aja" className="h-full w-full rounded-xl bg-black object-contain p-1" />
+            <img src="/logo.png" alt="Order One" className="h-full w-full rounded-xl bg-black object-contain p-1" />
           </span>
           <div className="min-w-0">
-            <p className="font-display text-[16px] font-extrabold leading-tight text-ink">Orderin Aja</p>
+            <p className="font-display text-[16px] font-extrabold leading-tight text-ink">Order One</p>
             <p className="text-[11px] font-semibold text-chili-dark">Self-order · langsung ke dapur</p>
           </div>
         </div>

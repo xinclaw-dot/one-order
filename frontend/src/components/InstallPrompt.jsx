@@ -28,7 +28,7 @@ export default function InstallPrompt({ liftPx = 0 }) {
             <img src="/icons/icon-192.png" alt="" className="h-full w-full rounded-xl object-contain" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="font-display text-[15px] font-bold leading-tight">Pasang Orderin Aja</p>
+            <p className="font-display text-[15px] font-bold leading-tight">Pasang Order One</p>
             <p className="text-[12px] leading-snug text-cream/80">
               {showIosHint && !canPromptNative
                 ? "Biar bisa buka langsung dari layar utama, tanpa buka browser."

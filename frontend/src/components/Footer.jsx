@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="px-5 py-5 text-center">
       <p className="text-[11px] font-medium text-ink-soft/70">
-        Copyright By Orderin Aja © {yearLabel}. All rights reserved.
+        Copyright By Order One © {yearLabel}. All rights reserved.
       </p>
     </footer>
   );

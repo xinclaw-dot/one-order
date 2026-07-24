@@ -11,14 +11,14 @@ export default function StoreClosedScreen({ status }) {
 
       <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 py-10 text-center">
         <span className="mb-5 grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-black p-1.5 shadow-lg shadow-ink/10 ring-1 ring-ink/10">
-          <img src="/logo.png" alt="Orderin Aja" className="h-full w-full object-contain" />
+          <img src="/logo.png" alt="Order One" className="h-full w-full object-contain" />
         </span>
 
         <span className="mb-4 grid h-14 w-14 place-items-center rounded-full bg-ink/5">
           {isManual || isDayOff ? <MapPinOff size={26} className="text-chili-dark" /> : <Clock size={26} className="text-chili-dark" />}
         </span>
 
-        <h1 className="font-display text-[22px] font-extrabold leading-tight text-ink">Orderin Aja sedang tutup</h1>
+        <h1 className="font-display text-[22px] font-extrabold leading-tight text-ink">Order One sedang tutup</h1>
 
         <p className="mt-2 max-w-xs text-sm text-ink-soft">
           {isManual

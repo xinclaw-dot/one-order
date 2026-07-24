@@ -134,7 +134,7 @@ export default function OperationalSettings({ settings, onSave, saving, error })
         </label>
         <textarea
           rows={2}
-          placeholder="Contoh: Orderin Aja libur, ada acara keluarga di luar kota. Buka lagi besok ya!"
+          placeholder="Contoh: Order One libur, ada acara keluarga di luar kota. Buka lagi besok ya!"
           value={note}
           onChange={(e) => setNote(e.target.value)}
           onBlur={() => manualClosed && onSave({ manual_closed: true, manual_closed_note: note })}

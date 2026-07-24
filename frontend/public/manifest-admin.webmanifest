@@ -4,7 +4,7 @@
   "short_name": "Admin",
   "description": "Panel admin Order One untuk kelola menu, laporan, dan pengaturan.",
   "theme_color": "#000000",
-  "background_color": "#000000",
+  "background_color": "#ffffff",
   "display": "standalone",
   "orientation": "portrait",
   "start_url": "/admin",

@@ -1,8 +1,8 @@
 {
   "id": "/admin",
-  "name": "Orderin Aja — Admin",
+  "name": "Order One — Admin",
   "short_name": "Admin",
-  "description": "Panel admin Orderin Aja untuk kelola menu, laporan, dan pengaturan.",
+  "description": "Panel admin Order One untuk kelola menu, laporan, dan pengaturan.",
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",

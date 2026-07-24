@@ -1,8 +1,8 @@
 {
   "id": "/kitchen",
-  "name": "Orderin Aja — Kitchen",
+  "name": "Order One — Kitchen",
   "short_name": "Kitchen",
-  "description": "Layar dapur Orderin Aja untuk memproses pesanan masuk.",
+  "description": "Layar dapur Order One untuk memproses pesanan masuk.",
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",

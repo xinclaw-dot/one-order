@@ -1,8 +1,8 @@
 {
   "id": "/kasir",
-  "name": "Orderin Aja — Kasir",
+  "name": "Order One — Kasir",
   "short_name": "Kasir",
-  "description": "Aplikasi kasir Orderin Aja untuk input & verifikasi pesanan.",
+  "description": "Aplikasi kasir Order One untuk input & verifikasi pesanan.",
   "theme_color": "#000000",
   "background_color": "#000000",
   "display": "standalone",

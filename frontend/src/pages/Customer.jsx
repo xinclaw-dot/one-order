@@ -390,7 +390,7 @@ export default function Customer() {
         <header className="sticky top-0 z-20 bg-ink px-4 py-4 text-cream">
           <div className="flex items-center gap-2.5">
             <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-black p-1.5 shadow-md shadow-black/20 ring-2 ring-white/70">
-              <img src="/logo.png" alt="Warung Kita" className="h-full w-full object-contain" />
+              <img src="/logo.png" alt="Order One" className="h-full w-full object-contain" />
             </span>
             <div className="min-w-0 flex-1">
               <p className="truncate text-[13px] font-semibold text-cream/90">

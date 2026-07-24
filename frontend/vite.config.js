@@ -28,9 +28,9 @@ export default defineConfig({
         // "/:tenantSlug/kitchen" dkk (bukan lagi path flat "/kitchen"), jadi
         // scope "/" di sini tidak lagi tabrakan dengan scope manifest mereka.
         id: '/',
-        name: 'Orderin Aja — Self Order',
-        short_name: 'Orderin Aja',
-        description: 'Pesan Orderin Aja langsung ke dapur, tanpa antre.',
+        name: 'Order One — Self Order',
+        short_name: 'Order One',
+        description: 'Pesan Order One langsung ke dapur, tanpa antre.',
         theme_color: '#000000',
         background_color: '#000000',
         display: 'standalone',

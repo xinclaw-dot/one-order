@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=Space+Mono:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* ---- Orderin Aja fresh & bersemangat palette (hijau ala Grab) ---- */
+  --color-ink: #007a3d;
+  --color-ink-2: #00944b;
+  --color-ink-3: #4cc98a;
+  --color-cream: #f1faf5;
+  --color-paper: #ffffff;
+  --color-chili: #00b14f;
+  --color-chili-dark: #00873d;
+  --color-guava: #00d9a3;
+  --color-mango: #ffc233;
+  --color-matcha: #14b8a6;
+  --color-sky: #2fa8ff;
+  --color-ink-soft: #5c8a72;
+
+  /* Warna status yang MAKNANYA tetap sama di semua tema warna (tidak ikut berubah) */
+  --color-status-done: #22c55e;
+  --color-status-cancel: #ef4444;
+
+  --font-display: "Bricolage Grotesque", "Plus Jakarta Sans", sans-serif;
+  --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ticket: "Space Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+::selection { background: var(--color-mango); color: var(--color-ink); }
+
+.ticket-edge-bottom {
+  --notch: 14px;
+  mask-image: radial-gradient(circle at var(--notch) 0, transparent var(--notch), black calc(var(--notch) + 0.5px));
+  mask-size: calc(var(--notch) * 2) 100%;
+  mask-repeat: repeat-x;
+  mask-position: bottom left;
+  -webkit-mask-image: radial-gradient(circle at var(--notch) 0, transparent var(--notch), black calc(var(--notch) + 0.5px));
+  -webkit-mask-size: calc(var(--notch) * 2) 100%;
+  -webkit-mask-repeat: repeat-x;
+  -webkit-mask-position: bottom left;
+}
+
+.ticket-edge-top {
+  --notch: 14px;
+  mask-image: radial-gradient(circle at var(--notch) 100%, transparent var(--notch), black calc(var(--notch) + 0.5px));
+  mask-size: calc(var(--notch) * 2) 100%;
+  mask-repeat: repeat-x;
+  mask-position: top left;
+  -webkit-mask-image: radial-gradient(circle at var(--notch) 100%, transparent var(--notch), black calc(var(--notch) + 0.5px));
+  -webkit-mask-size: calc(var(--notch) * 2) 100%;
+  -webkit-mask-repeat: repeat-x;
+  -webkit-mask-position: top left;
+}
+
+.grain {
+  position: relative;
+}
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-floaty { animation: floaty 3s ease-in-out infinite; }
+
+@keyframes pop-in {
+  0% { transform: scale(0.92) translateY(10px); opacity: 0; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+.animate-pop-in { animation: pop-in 0.22s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+@keyframes sheet-up {
+  0% { transform: translateY(100%); }
+  100% { transform: translateY(0); }
+}
+.animate-sheet-up { animation: sheet-up 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+.animate-fade-in { animation: fade-in 0.18s ease both; }
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; opacity: 1; }
+  70% { box-shadow: 0 0 0 6px transparent; opacity: 0.7; }
+}
+.animate-pulse-dot { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-floaty, .animate-pop-in, .animate-sheet-up, .animate-fade-in, .animate-pulse-dot {
+    animation: none !important;
+  }
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-guava);
+  outline-offset: 2px;
+}
+
+input, textarea, select {
+  font-family: inherit;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* ============================================================
+   CETAK STRUK (thermal receipt) — disamakan dengan pola Bengkelmu
+   (web/js/receipt.js + @media print di style.css): struk dirender
+   ke dalam DOM halaman yang sedang aktif (bukan tab/window baru),
+   disembunyikan lewat posisi off-screen pada tampilan normal, lalu
+   window.print() dipanggil di halaman yang sama itu juga. Saat mode
+   cetak, seluruh konten lain disembunyikan lewat visibility supaya
+   yang tercetak hanya elemen struk. Pendekatan ini sengaja
+   menghindari window.open()/document.write() ke tab baru — itulah
+   sumber "penolakan"/gagal cetak yang sering muncul khusus di
+   Safari iPhone/iPad & in-app browser (WhatsApp/Instagram), lihat
+   komentar detail di lib/printReceipt.js.
+   ============================================================ */
+#print-receipt-root {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+}
+
+.receipt-ticket {
+  font-family: 'Courier New', Courier, 'Consolas', monospace;
+  color: #000;
+  background: #fff;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+.receipt-ticket .rt-center { text-align: center; }
+.receipt-ticket .rt-logo { max-width: 55%; max-height: 60px; object-fit: contain; margin: 0 auto 4px; display: block; }
+.receipt-ticket h1 { margin: 0 0 2px; letter-spacing: 0.5px; }
+.receipt-ticket .rt-divider { border-top: 1px dashed #000; margin: 6px 0; }
+.receipt-ticket .rt-row { display: flex; justify-content: space-between; gap: 6px; }
+.receipt-ticket .rt-sub { padding-left: 8px; color: #333; }
+.receipt-ticket .rt-total-row { display: flex; justify-content: space-between; font-weight: bold; }
+.receipt-ticket .rt-meta { margin: 1px 0; }
+.receipt-ticket .rt-footer { margin-top: 8px; }
+
+@media print {
+  @page { margin: 0; }
+  html, body { height: auto; }
+  body * { visibility: hidden; }
+  #print-receipt-root, #print-receipt-root * { visibility: visible; }
+  #print-receipt-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .receipt-ticket {
+    margin: 0 auto;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .receipt-ticket .rt-logo {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

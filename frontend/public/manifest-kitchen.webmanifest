@@ -1,0 +1,18 @@
+{
+  "id": "/kitchen",
+  "name": "Orderin Aja — Kitchen",
+  "short_name": "Kitchen",
+  "description": "Layar dapur Orderin Aja untuk memproses pesanan masuk.",
+  "theme_color": "#000000",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "start_url": "/kitchen",
+  "scope": "/kitchen",
+  "lang": "id",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

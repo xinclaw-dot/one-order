@@ -1,0 +1,42 @@
+name = "kitchen-order-api"
+main = "src/index.js"
+compatibility_date = "2026-07-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "one_order_db"
+# ISI SETELAH SETTING: jalankan `wrangler d1 create kitchen_order_db` (kalau belum
+# punya database sendiri) lalu tempel database_id yang dihasilkan di sini. SENGAJA
+# dikosongkan di sini supaya tidak salah nyambung ke database aplikasi lama yang
+# sudah berjalan.
+database_id = "6abe0428-75ef-4c50-a1e3-4d6896310131"
+
+# Durable Object "OrderStream" (dulu dipakai untuk SSE realtime) sudah dihapus dari
+# kode (lihat src/index.js). Migration "v1" di bawah sebelumnya MEMBUAT class ini di
+# akun Cloudflare, jadi harus ada migration "v2" yang secara resmi MENGHAPUSNYA —
+# kalau binding di atas cuma dihilangkan tanpa migration ini, `wrangler deploy` akan
+# gagal (atau Durable Object lama tetap menggantung di akun Cloudflare).
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["OrderStream"]
+
+[[migrations]]
+tag = "v2"
+deleted_classes = ["OrderStream"]
+
+[vars]
+# ISI SETELAH SETTING: nama "cloud name" akun Cloudinary Anda sendiri (dashboard
+# Cloudinary -> Product Environment Settings). Sengaja dikosongkan supaya upload
+# gambar/suara tidak salah nyasar ke akun Cloudinary aplikasi lama yang sudah berjalan.
+CLOUDINARY_CLOUD_NAME = "kgm4xmnp"
+MAX_ACTIVE_ORDERS_PER_PHONE = "3"
+# CATATAN MULTI-TENANT: ADMIN_TOKEN / KITCHEN_TOKEN GLOBAL yang dulu ada di sini
+# SUDAH TIDAK DIPAKAI. Setiap tenant (warung) punya admin_token & kitchen_token
+# sendiri-sendiri, disimpan di tabel `tenants` (kolom admin_token/kitchen_token),
+# dibuat otomatis (acak) saat tenant dibuat lewat panel superadmin (/superman),
+# dan bisa diganti lagi lewat panel Admin tenant itu sendiri (tab "Keamanan").
+#
+# SUPERADMIN_TOKEN SENGAJA TIDAK ditaruh di [vars]. Token itu dipasang lewat
+# Cloudflare Secret (`wrangler secret put SUPERADMIN_TOKEN`), BUKAN lewat [vars],
+# supaya tidak tersimpan sebagai teks biasa di file ini. Token ini dipakai HANYA
+# untuk /superadmin/* (kelola semua tenant) — lihat README.

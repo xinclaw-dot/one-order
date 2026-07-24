@@ -51,7 +51,7 @@ export default function App() {
 function NoTenantScreen() {
   return (
     <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: 8, padding: 24, textAlign: "center", fontFamily: "system-ui, sans-serif" }}>
-      <h1 style={{ fontSize: 20, fontWeight: 700 }}>Warung Kita</h1>
+      <h1 style={{ fontSize: 20, fontWeight: 700 }}>Order One</h1>
       <p style={{ color: "#666" }}>Gunakan link warung Anda, contoh: /nama-warung-anda/order</p>
     </div>
   );
